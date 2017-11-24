@@ -26,9 +26,7 @@ public class Game implements Serializable
         this.producer = producer;
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     public String getName() {
         return name;

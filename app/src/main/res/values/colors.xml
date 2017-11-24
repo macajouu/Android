@@ -4,7 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="mycolor">#FFF59D</color>
-    <color name="itemBackground">#FFEB3B</color>
-    <color name="itemBackgroundSendButton">#F9A825</color>
-    <color name="itemBackgroundUpdateButton">#F57F17</color>
+    <color name="itemBackgroundSendButton">#8792d1</color>
+    <color name="itemBackgroundUpdateButton">#8792d1</color>
 </resources>

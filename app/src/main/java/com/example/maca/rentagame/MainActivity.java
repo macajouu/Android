@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity
 
         listView.setAdapter(adapter);
 
+        System.out.println("asfsagd");
         Log.v(TAG, "showed listview");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -56,24 +57,28 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                System.out.println("Hehe");
                 Log.v(TAG, "in click listener!");
 
-//                Game game = adapter.getItem(position);
-//
-//                Intent intent = new Intent(MainActivity.this, GameEditActivity.class);
-//
-//                intent.putExtra("GAME", game);
-//
-//                startActivityForResult(intent, REQ_CODE_CHILD);
+                Game game = adapter.getItem(position);
+
+                Intent intent = new Intent(MainActivity.this, GameEditActivity.class);
+
+                intent.putExtra("GAME", game);
+
+                startActivityForResult(intent, REQ_CODE_CHILD);
             }
         });
     }
 
-    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult (int requestCode, int resultCode, Intent data)
+    {
+        System.out.println("Hehe1");
         if(requestCode == REQ_CODE_CHILD)
         {
+            System.out.println("Hehe2");
             Game game = (Game) data.getExtras().getSerializable("UPDATED_GAME");
-            Log.v(TAG, "-- onActivityResult() --------------- game: " + game.toString()+" \n");
+            System.out.println("-- onActivityResult() --------------- game: " + game.toString()+" \n");
             adapter.updateGame(game);
         }
 
