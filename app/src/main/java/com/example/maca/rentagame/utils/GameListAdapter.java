@@ -33,7 +33,7 @@ public class GameListAdapter extends BaseAdapter
     }
 
     @Override
-    public Object getItem(int position)
+    public Game getItem(int position)
     {
         return games.get(position);
     }
