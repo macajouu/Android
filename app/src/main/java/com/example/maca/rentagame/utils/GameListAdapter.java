@@ -46,9 +46,12 @@ public class GameListAdapter extends BaseAdapter
 
     public Game getGameById(Integer id)
     {
+        System.out.println("id: " + id);
         for(Game g : games)
         {
-            if(g.getId() == id)
+            System.out.println("id1: " + g.getId());
+
+            if(g.getId().equals(id))
             {
                 return g;
             }
@@ -63,11 +66,15 @@ public class GameListAdapter extends BaseAdapter
 
     public void updateGame(Game game)
     {
+        System.out.println("In update: " + game.toString());
+
         Game g = getGameById(game.getId());
 
         g.setName(game.getName());
         g.setReleaseYear(game.getReleaseYear());
         g.setProducer(game.getProducer());
+
+        notifyDataSetChanged();
     }
 
     @Override
