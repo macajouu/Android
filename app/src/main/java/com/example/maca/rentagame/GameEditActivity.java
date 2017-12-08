@@ -3,23 +3,33 @@ package com.example.maca.rentagame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.maca.rentagame.model.Game;
+import com.example.maca.rentagame.utils.DatePickerFragment;
 import com.example.maca.rentagame.utils.GameListAdapter;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static com.example.maca.rentagame.MainActivity.DIALOG_DATE;
 
 /**
  * Created by Maca on 11/24/2017.
  */
 
-public class GameEditActivity extends AppCompatActivity
+public class GameEditActivity extends AppCompatActivity implements DatePickerFragment.DateDialogListener
 {
     private static final String TAG = GameEditActivity.class.getSimpleName();
 
-    private GameListAdapter adapter;
     private Game game;
+
+    public final static String REQ_CODE_PICKER = "GETDATA";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,6 +66,7 @@ public class GameEditActivity extends AppCompatActivity
             }
         });
 
+        Log.v(TAG, "OUTSIDE");
         Button updateGameButton = (Button) findViewById(R.id.updateButton);
 
         updateGameButton.setOnClickListener(new View.OnClickListener()
@@ -78,11 +89,44 @@ public class GameEditActivity extends AppCompatActivity
                 finish();
             }
         });
+
+        Button datePickerAlertDialog = (Button)findViewById(R.id.alert_dialog_date_picker);
+        datePickerAlertDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "START");
+
+                DatePickerFragment dialog = new DatePickerFragment();
+                Bundle bundle = new Bundle();
+
+                Log.v(TAG, "Here NOW");
+
+                Date date = new Date(game.getReleaseYear());
+
+                Log.v(TAG, "Date: " +  date);
+
+                bundle.putSerializable(REQ_CODE_PICKER, date);
+                dialog.setArguments(bundle);
+                dialog.show(getSupportFragmentManager(), DIALOG_DATE);
+            }
+        });
     }
 
     @Override
     public void onBackPressed()
     {
         super.onBackPressed();
+    }
+
+    @Override
+    public void onFinishDialog(Date date) {
+        game.setReleaseYear(String.valueOf(date.getYear()));
+        Toast.makeText(this, "Selected Date :"+ formatDate(date), Toast.LENGTH_SHORT).show();
+    }
+
+    public String formatDate(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String hireDate = sdf.format(date);
+        return hireDate;
     }
 }

@@ -8,25 +8,20 @@ import java.io.Serializable;
 
 public class Game implements Serializable
 {
-    private Integer id;
     private String name;
     private String releaseYear;
     private String producer;
 
     public Game()
     {
-        id = 0;
         name = releaseYear = producer = "";
     }
 
-    public Game(Integer id, String name, String releaseYear, String producer) {
-        this.id = id;
+    public Game(String name, String releaseYear, String producer) {
         this.name = name;
         this.releaseYear = releaseYear;
         this.producer = producer;
     }
-
-    public Integer getId() { return id; }
 
     public String getName() {
         return name;
@@ -55,7 +50,6 @@ public class Game implements Serializable
     @Override
     public String toString() {
         return "Game{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", releaseYear='" + releaseYear + '\'' +
                 ", producer='" + producer + '\'' +
