@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "897362325353",
+    "firebase_url": "https://firegames-31b1e.firebaseio.com",
+    "project_id": "firegames-31b1e",
+    "storage_bucket": "firegames-31b1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897362325353:android:f09aa1e63bbf6ec7",
+        "android_client_info": {
+          "package_name": "com.example.maca.rentagame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897362325353-lqjpl9l129gc78mhiu1mo5b2lie4al14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc1CQ59yak9CN4qIwmDDp4hQEzTg4rLfU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

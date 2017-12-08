@@ -6,4 +6,7 @@
     <color name="mycolor">#FFF59D</color>
     <color name="itemBackgroundSendButton">#8792d1</color>
     <color name="itemBackgroundUpdateButton">#8792d1</color>
+    <color name="itemBackgroundAddButton">#F57F17</color>
+    <color name="itemBackgroundDeleteButton">#ed152b</color>
+    <color name="itemBackgroundPickerButton">#b3ed15</color>
 </resources>

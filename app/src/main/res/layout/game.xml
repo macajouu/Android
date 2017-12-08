@@ -32,7 +32,7 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toEndOf="@+id/nameTextView"
         app:layout_constraintTop_toTopOf="@+id/nameTextView"
         app:layout_constraintVertical_bias="0.0" />
@@ -51,4 +51,21 @@
         app:layout_constraintStart_toEndOf="@+id/yearTextView"
         app:layout_constraintTop_toTopOf="@+id/yearTextView"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Delete"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/producerTextView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/producerTextView"
+        app:layout_constraintTop_toTopOf="@+id/producerTextView"
+        app:layout_constraintVertical_bias="0.2"/>
+
+
 </android.support.constraint.ConstraintLayout>
